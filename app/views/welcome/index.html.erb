@@ -25,15 +25,25 @@ li {margin-left:0px; padding:5px; list-style-type:decimal;}
 
 
 <script type="text/javascript">
+
 var map;
+var lat;
+var long;
 function mapa()
 {
   var opts = {'center': new google.maps.LatLng(26.12295, -80.17122), 'zoom':11, 'mapTypeId': google.maps.MapTypeId.ROADMAP }
   map = new google.maps.Map(document.getElementById('mapdiv'),opts);
   
   google.maps.event.addListener(map,'click',function(event) {
-    document.getElementById('latlongclicked').value = event.latLng.lat() + ', ' + event.latLng.lng()
-  })
+    lat = event.latLng.lat();
+    long = event.latLng.lng();
+    document.getElementById('latlongclicked').value = lat + ', ' + long
+    window.open("articles/new?param1="+lat+"&param2="+long)
+    
+    
+    
+  });
+
 
   google.maps.event.addListener(map,'mousemove',function(event) {
     document.getElementById('latspan').innerHTML = event.latLng.lat()
@@ -61,7 +71,9 @@ window.onload = mapa
 </div>
 
 <p>MAP</p>
-    
+
+
+
 </body>
 
 </html>

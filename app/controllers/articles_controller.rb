@@ -8,7 +8,8 @@ class ArticlesController < ApplicationController
         @latitude = params[:param1]
         @longitude = params[:param2]
         @closest = client.trends_closest(options = {:lat => @latitude, :long => @longitude})
-        @locid1 = @closest[0]["woeid"]
+        @locid1 = @closest[0].woeid
         @trends = client.trends(id = @locid1, opions = {})
+        
     end
 end
