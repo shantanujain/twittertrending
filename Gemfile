@@ -36,8 +36,16 @@ gem 'twitter'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'sqlite3'
+  gem 'pry'
   gem 'byebug'
 end
+
+group :produciton do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
