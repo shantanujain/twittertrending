@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
             config.consumer_key    = "8yEM5tZHe1kgh6pRM8hYMtdsz"
             config.consumer_secret = "zaXl77mTujGJjeNS9lrjjaRcYo2okkMC4lB2F7gF12lQznlEEb"
         end
-        @trends = client.trends(id = 1, options = {})
-        puts @trends
+        @trends = client.trends(id = 23424848, options = {})
+        
     end
 end
