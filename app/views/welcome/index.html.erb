@@ -1,2 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+
+<body>
+
 <h1>Twitter Trending Topics</h1>
-<%= link_to "India", "articles/new" %>
+<%= link_to "India", "articles/new?param1=20.5937&param2=78.9629" %>
+<%= link_to "France", "articles/new?param1=46.2276&param2=2.2137" %>
+<%= link_to "USA", "articles/new?param1=37.0902&param2=-122.1233" %>
+
+
+<script type="text/javascript">
+var map;
+function mapa()
+{
+	var opts = {'center': new google.maps.LatLng(26.12295, -80.17122), 'zoom':11, 'mapTypeId': google.maps.MapTypeId.ROADMAP }
+	map = new google.maps.Map(document.getElementById('mapdiv'),opts);
+	
+	google.maps.event.addListener(map,'click',function(event) {
+		document.getElementById('latlongclicked').value = event.latLng.lat() + ', ' + event.latLng.lng()
+	})
+
+	google.maps.event.addListener(map,'mousemove',function(event) {
+		document.getElementById('latspan').innerHTML = event.latLng.lat()
+		document.getElementById('lngspan').innerHTML = event.latLng.lng()
+		document.getElementById('latlong').innerHTML = event.latLng.lat() + ', ' + event.latLng.lng()
+	});
+	
+}
+
+window.onload = mapa
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKMGG6l9a7q-YGDufOQver7TVrcYvazOA&callback=mapa"
+    async defer></script>
+    
+</body>
+
+</html>
+    
