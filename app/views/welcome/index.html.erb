@@ -34,6 +34,8 @@ function mapa()
   var opts = {'center': new google.maps.LatLng(26.12295, -80.17122), 'zoom':2, 'mapTypeId': google.maps.MapTypeId.ROADMAP }
   map = new google.maps.Map(document.getElementById('mapdiv'),opts);
   
+  
+  
   google.maps.event.addListener(map,'click',function(event) {
     lat = event.latLng.lat();
     long = event.latLng.lng();
@@ -41,20 +43,33 @@ function mapa()
     window.open("articles/new?param1="+lat+"&param2="+long)
     
     
+     $.ajax({
+					  url: 'https://api.twitter.com/1.1/trends/available.json',
+					  dataType: 'json',
+					  success: function(data){
+						 alert(data);
+					  }
+					});
+					
     
   });
 
 
   google.maps.event.addListener(map,'mousemove',function(event) {
+    lat = event.latLng.lat();
+    long = event.latLng.lng();
     document.getElementById('latspan').innerHTML = event.latLng.lat()
     document.getElementById('lngspan').innerHTML = event.latLng.lng()
     document.getElementById('latlong').innerHTML = event.latLng.lat() + ', ' + event.latLng.lng()
+    //window.open("articles/new?param1="+lat+"&param2="+long)
   });
   
 }
 
 window.onload = mapa
 </script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
 <div>
