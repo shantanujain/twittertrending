@@ -10,7 +10,7 @@
   <a href="https://github.com/shantanujain/twittertrending">Github</a></small></center></h1>
 </div>
 <div class="text-center"> 
-<button type="button" class="btn btn-default"><center><%= link_to "Locations for which data is available", "available/index" %></center></button>
+<button type="button" class="btn btn-default"><center><%= link_to "Locations for which data is available", "/available/index" %></center></button>
 </div>
 <br>
 <br>
@@ -49,6 +49,8 @@ li {margin-left:0px; padding:5px; list-style-type:decimal;}
       });
       
   });*/
+  
+  
   
   var map;
   var lat;
@@ -102,7 +104,7 @@ li {margin-left:0px; padding:5px; list-style-type:decimal;}
   				}
   				marker();
   				document.getElementById("stream").innerHTML = kk;
-  				
+  				//$(document).getElementById("available").style.visibility = "visible";
   		  }
       });
       //var list = ['abc', 'def'];
@@ -214,12 +216,13 @@ li {margin-left:0px; padding:5px; list-style-type:decimal;}
 
 
 
-<div id="available"></div>
+<div id="available">
 <div class="page-header">
   <h3><center>Tweet Stream<br>
 <ul id="stream">
 </ul>
 </center>
+</div>
 </div>
 <br>
 
