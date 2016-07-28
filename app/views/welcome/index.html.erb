@@ -115,6 +115,7 @@ li {margin-left:0px; padding:5px; list-style-type:decimal;}
             kk += "<li>"+list+"</li>";
   				}
   				marker();
+  				document.getElementById("streamname").innerHTML = namename;
   				document.getElementById("stream").innerHTML = kk;
   				//$(document).getElementById("available").style.visibility = "visible";
   		  }
@@ -230,9 +231,12 @@ li {margin-left:0px; padding:5px; list-style-type:decimal;}
 
 <div id="available">
 <div class="page-header">
-  <h3><center>Tweet Stream<br>
+  <h3><center>Tweet Stream<br></center></h3>
+  <center><h5 id = "streamname"></h5></center>
+  <center>
 <ul id="stream">
 </ul>
+</center>
 </center>
 </div>
 </div>

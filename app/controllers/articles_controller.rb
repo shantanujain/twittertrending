@@ -58,8 +58,8 @@ class ArticlesController < ApplicationController
         end
         puts topics3
         place = ["-122.75","36.8","-121.75","37.8"]
-        longitude1 = longitude.to_i+1
-        latitude1 = latitude.to_i+1
+        longitude1 = longitude.to_i+5
+        latitude1 = latitude.to_i+5
         filterbound = [longitude.to_s,latitude.to_s,longitude1.to_s,latitude1.to_s]
         #puts place
         filterwords = ""
