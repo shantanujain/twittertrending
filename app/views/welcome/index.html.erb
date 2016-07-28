@@ -68,6 +68,7 @@ li {margin-left:0px; padding:5px; list-style-type:decimal;}
   var long1;
   
   var mylist= [];
+  var namename;
   function mapa()
   {
     var opts = {'center': new google.maps.LatLng(0, 0), 'zoom':2, 'mapTypeId': google.maps.MapTypeId.ROADMAP }
@@ -99,6 +100,8 @@ li {margin-left:0px; padding:5px; list-style-type:decimal;}
           var myString1 = mylist[2];
           mylist = myString.split(",");
           mylist.splice(-1,1);
+          namename = mylist[0];
+          mylist.splice(0,1);
           stream = myString1.split(",");
           console.log(mylist);
   						// alert(data);
@@ -141,7 +144,7 @@ li {margin-left:0px; padding:5px; list-style-type:decimal;}
     
   }
   function marker() {
-  var contentString = '<p>'+String(mylist)+'</p>';
+  var contentString = '<p>'+String(namename)+'<br>'+String(mylist)+'</p>';
         var infowindow = new google.maps.InfoWindow({
           content: contentString
         });

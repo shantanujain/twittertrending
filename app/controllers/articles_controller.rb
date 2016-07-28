@@ -73,7 +73,7 @@ class ArticlesController < ApplicationController
         client_stream.filter(locations: filterbound.join(","), track: topics3.join(",")) do |tweet|
             @tweetstream.push(tweet.text)
             i = i + 1
-            if(i > 10)
+            if(i > 20)
                 break
             end
         end
